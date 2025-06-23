@@ -1,0 +1,239 @@
+<!--
+  GameVerse Project Page
+  Template adapted from VACE-page (https://ali-vilab.github.io/VACE-Page/)
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GameVerse</title>
+    <meta
+      name="description"
+      content="GameVerse – Interactive Video Game Generation"
+    />
+    <meta
+      name="keywords"
+      content="Game Generation, Game Editing, Interactive Video Game, Diffusion, VAE"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#9ACBD0" />
+    <link
+      rel="stylesheet"
+      href="./VACE_files/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./VACE_files/academicons.min.css"
+    />
+    <!--  Favicon: keep the original template icon; replace when available -->
+    <link
+      rel="shortcut icon"
+      href="https://ali-vilab.github.io/VACE-Page/assets/logos/ace_icon.png"
+      type="image/x-icon"
+    />
+
+    <!--  Template CSS copied intact from VACE (allows quick start)  -->
+    <style>
+/* --- original VACE inline style (trim-free to avoid missing pieces) --- */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-stretch: 100%;
+  font-display: block;
+  font-weight: 300 700;
+  src: url("./assets/fonts/roboto.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ——— Intro section ——— */
+#intro {
+  padding: 90px 0 80px 0;
+  text-align: center;
+}
+#intro h1 {
+  font-size: 80px;
+  font-weight: 300;
+  margin: 20px 0;
+}
+#intro h2 {
+  margin: 20px 0 40px 0;
+  font-weight: 300;
+  color: #ccc;
+}
+#intro h2 strong {
+  color: #fff;
+}
+
+.button {
+  background-color: #ccc;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  text-decoration: none;
+  margin-right: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.button:hover {
+  background-color: #fff;
+}
+
+/* Overview */
+#overview .title {
+  font-size: 32px;
+  font-weight: 500;
+  padding: 20px 0;
+  text-align: center;
+}
+#overview .description {
+  padding: 0 10%;
+  color: #999;
+  line-height: 25px;
+  font-weight: 300;
+}
+
+/* Simple placeholder styles */
+.placeholder-wrap {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  border: 1px dashed #444;
+  border-radius: 10px;
+}
+
+/* Contributors & BibTex (reuse template) */
+.acknowledgements-section,
+.bibtex-section {
+  padding: 50px 10%;
+  text-align: center;
+  margin-top: 60px;
+  color: #ccc;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bibtex-code {
+  background-color: #222;
+  color: #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  display: inline-block;
+  font-family: monospace;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+/* Responsive tweaks (retain original breakpoints) */
+@media (max-width: 640px) {
+  #intro h1 {
+    font-size: 50px;
+  }
+  #intro h2 {
+    font-size: 20px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- ───────────────────────── Intro ────────────────────────── -->
+    <section id="intro">
+      <div class="content">
+        <h1><strong>🕹️ GameVerse</strong></h1>
+        <h2><strong>Interactive Video Game Generation</strong></h2>
+
+        <!-- Author line -->
+        <p style="font-size: 18px; font-weight: 300; color: #bbb">
+          GameVerse Team
+        </p>
+
+        <!--  Buttons  -->
+        <a
+          class="button"
+          href="https://github.com/your-org/GameVerse"
+          rel="noopener noreferrer"
+          ><i class="fa fa-github" style="font-size: 17px"></i> GitHub</a
+        >
+        <a
+          class="button"
+          href="https://huggingface.co/collections/your-org/gameverse"
+          rel="noopener noreferrer"
+          ><span class="icon">🤗</span> HF&nbsp;Model</a
+        >
+        <a
+          class="button"
+          href="https://your-demo-link.com"
+          rel="noopener noreferrer"
+          ><span class="icon">🎮</span> Live&nbsp;Demo</a
+        >
+
+        <!--  Placeholder banner (replace with video when available)  -->
+        <div class="placeholder-wrap">Demo video coming soon…</div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── Overview ──────────────────────── -->
+    <section id="overview">
+      <div class="title">Project Overview</div>
+      <div class="description">
+        <p>
+          We present <code>GameVerse</code>, a full-stack framework for
+          interactive video game generation, covering the entire pipeline from
+          simulation and generation to editing.
+        </p>
+        <p>
+          Specifically, <code>GameVerse</code> comprises three core modules:
+          <em>High-Fidelity Game Simulation</em>,
+          <em>Multi-Modal Game Generation</em>, and
+          <em>Multi-Granularity Game Editing</em>. Collectively,
+          <code>GameVerse</code> pushes interactive video game generation toward
+          an open, extensible, and truly AI-driven creation paradigm.
+        </p>
+      </div>
+    </section>
+
+    <!-- ───── Media showcase sections (commented until assets ready) ─────
+    <section id="video_1"> … </section>
+    <section id="video_2"> … </section>
+    -->
+
+    <!-- ───────────────────── Contributors ────────────────────── -->
+    <section class="acknowledgements-section">
+      <h3>Contributors</h3>
+      <p>Details coming soon…</p>
+    </section>
+
+    <!-- ──────────────────────── BibTeX ───────────────────────── -->
+    <section class="bibtex-section">
+      <h3>BibTeX</h3>
+      <pre class="bibtex-code">@article{gameverse,
+  title   = {GameVerse: Interactive Video Game Generation},
+  author  = {GameVerse Team},
+  journal = {arXiv preprint},
+  year    = {2025}
+}</pre
+      >
+    </section>
+  </body>
+</html>
