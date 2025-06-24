@@ -1,12 +1,12 @@
 <!--
-  GameVerse Project Page
-  Template adapted from VACE-page (https://ali-vilab.github.io/VACE-Page/)
+  GameVerse Project Page – revamped (Matrix-inspired neon theme)
+  Cline – June 2025
 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>GameVerse</title>
+    <title>GameVerse – Interactive Video Game Generation</title>
     <meta
       name="description"
       content="GameVerse – Interactive Video Game Generation"
@@ -16,224 +16,286 @@
       content="Game Generation, Game Editing, Interactive Video Game, Diffusion, VAE"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#9ACBD0" />
-    <link
-      rel="stylesheet"
-      href="./VACE_files/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./VACE_files/academicons.min.css"
-    />
-    <!--  Favicon: keep the original template icon; replace when available -->
-    <link
-      rel="shortcut icon"
-      href="https://ali-vilab.github.io/VACE-Page/assets/logos/ace_icon.png"
-      type="image/x-icon"
-    />
+    <meta name="theme-color" content="#000000" />
 
-    <!--  Template CSS copied intact from VACE (allows quick start)  -->
-    <style>
-/* --- original VACE inline style (trim-free to avoid missing pieces) --- */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-stretch: 100%;
-  font-display: block;
-  font-weight: 300 700;
-  src: url("./assets/fonts/roboto.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+    <!-- Icons / Fonts -->
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/academicons.min.css" />
 
-* {
-  box-sizing: border-box;
-}
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
 
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* ——— Intro section ——— */
-#intro {
-  padding: 90px 0 80px 0;
-  text-align: center;
-}
-#intro h1 {
-  font-size: 80px;
-  font-weight: 300;
-  margin: 20px 0;
-}
-#intro h2 {
-  margin: 20px 0 40px 0;
-  font-weight: 300;
-  color: #ccc;
-}
-#intro h2 strong {
-  color: #fff;
-}
-
-.button {
-  background-color: #ccc;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: background-color 0.5s;
-  text-decoration: none;
-  margin-right: 8px;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-.button:hover {
-  background-color: #fff;
-}
-
-/* Overview */
-#overview .title {
-  font-size: 32px;
-  font-weight: 500;
-  padding: 20px 0;
-  text-align: center;
-}
-#overview .description {
-  padding: 0 10%;
-  color: #999;
-  line-height: 25px;
-  font-weight: 300;
-}
-
-/* Simple placeholder styles */
-.placeholder-wrap {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 0;
-  color: #999;
-  font-style: italic;
-  text-align: center;
-  border: 1px dashed #444;
-  border-radius: 10px;
-}
-
-/* Contributors & BibTex (reuse template) */
-.acknowledgements-section,
-.bibtex-section {
-  padding: 50px 10%;
-  text-align: center;
-  margin-top: 60px;
-  color: #ccc;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.bibtex-code {
-  background-color: #222;
-  color: #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  display: inline-block;
-  font-family: monospace;
-  max-width: 800px;
-  overflow-x: auto;
-}
-
-/* Responsive tweaks (retain original breakpoints) */
-@media (max-width: 640px) {
-  #intro h1 {
-    font-size: 50px;
-  }
-  #intro h2 {
-    font-size: 20px;
-  }
-}
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo2.png" type="image/png" />
   </head>
 
   <body>
-    <!-- ───────────────────────── Intro ────────────────────────── -->
-    <section id="intro">
-      <div class="content">
-        <h1><strong>🕹️ GameVerse</strong></h1>
+    <!-- ─────────────── Header / Navigation ─────────────── -->
+    <header>
+      <a href="#intro" class="logo">
+        <img src="images/logo2.png" alt="GameVerse logo" width="32" height="32" />
+        GameVerse
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#game-simulation">Simulation</a></li>
+          <li><a href="#game-generation">Generation</a></li>
+          <li><a href="#game-editing">Editing</a></li>
+          <li><a href="#bibtex">BibTeX</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ─────────────── Main Content ─────────────────────── -->
+    <main>
+      <!-- ───────────────────────── Intro ────────────────────────── -->
+      <section id="intro" data-fade>
+        <h1>🕹️ GameVerse</h1>
         <h2><strong>Interactive Video Game Generation</strong></h2>
 
         <!-- Author line -->
-        <p style="font-size: 18px; font-weight: 300; color: #bbb">
-          GameVerse Team
+        <p class="mt-2" style="font-size: 1.1rem; color: #9ba0a6">
+          GameVerse&nbsp;Team
         </p>
 
         <!--  Buttons  -->
-        <a
-          class="button"
-          href="https://github.com/your-org/GameVerse"
-          rel="noopener noreferrer"
-          ><i class="fa fa-github" style="font-size: 17px"></i> GitHub</a
-        >
-        <a
-          class="button"
-          href="https://huggingface.co/collections/your-org/gameverse"
-          rel="noopener noreferrer"
-          ><span class="icon">🤗</span> HF&nbsp;Model</a
-        >
-        <a
-          class="button"
-          href="https://your-demo-link.com"
-          rel="noopener noreferrer"
-          ><span class="icon">🎮</span> Live&nbsp;Demo</a
-        >
+        <p class="mt-4">
+          <a
+            class="button"
+            href="https://github.com/your-org/GameVerse"
+            rel="noopener noreferrer"
+            ><i class="fa fa-github"></i> GitHub</a
+          >
+          <a
+            class="button"
+            href="https://huggingface.co/collections/your-org/gameverse"
+            rel="noopener noreferrer"
+            ><span class="icon">🤗</span> HF&nbsp;Model</a
+          >
+          <a
+            class="button"
+            href="https://your-demo-link.com"
+            rel="noopener noreferrer"
+            ><span class="icon">🎮</span> Live&nbsp;Demo</a
+          >
+        </p>
 
         <!--  Placeholder banner (replace with video when available)  -->
         <div class="placeholder-wrap">Demo video coming soon…</div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ──────────────────────── Overview ──────────────────────── -->
-    <section id="overview">
-      <div class="title">Project Overview</div>
-      <div class="description">
-        <p>
-          We present <code>GameVerse</code>, a full-stack framework for
-          interactive video game generation, covering the entire pipeline from
-          simulation and generation to editing.
+      <!-- ──────────────────────── Overview ──────────────────────── -->
+      <section id="overview" class="section" data-fade>
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-desc">
+          We present GameVerse, a full-stack framework for interactive video
+          game generation, covering the entire pipeline from high-fidelity game
+          simulation, multi-modal game generation to multi-granularity game
+          editing.
         </p>
-        <p>
-          Specifically, <code>GameVerse</code> comprises three core modules:
-          <em>High-Fidelity Game Simulation</em>,
-          <em>Multi-Modal Game Generation</em>, and
-          <em>Multi-Granularity Game Editing</em>. Collectively,
-          <code>GameVerse</code> pushes interactive video game generation toward
-          an open, extensible, and truly AI-driven creation paradigm.
+
+        <!-- Overview diagram -->
+        <img
+          src="images/overview.png"
+          class="hero-img"
+          alt="Overview framework diagram"
+        />
+      </section>
+
+      <!-- ──────────────── Game Simulation ──────────────── -->
+      <section
+        id="game-simulation"
+        class="section section-alt"
+        data-fade
+      >
+        <h2 class="section-title">AAA-level Game Simulation</h2>
+        <p class="section-desc">
+          We design a highly-compressed, low-latency 3D-VAE coupled with a
+          rolling KV-cache latent diffusion model, achieving real-time
+          1080p/60 fps simulation in mainstream 3D games with robust mechanism
+          preservation.
         </p>
-      </div>
-    </section>
+        <img
+          src="images/game simulation.png"
+          class="hero-img"
+          alt="Game simulation framework diagram"
+        />
 
-    <!-- ───── Media showcase sections (commented until assets ready) ─────
-    <section id="video_1"> … </section>
-    <section id="video_2"> … </section>
-    -->
+        <div class="subsection">
+          <h3 class="subsection-title">Diverse Scenarios Simulation</h3>
+          <div class="subcard-grid">
+            <!-- 3 placeholders -->
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
 
-    <!-- ───────────────────── Contributors ────────────────────── -->
-    <section class="acknowledgements-section">
-      <h3>Contributors</h3>
-      <p>Details coming soon…</p>
-    </section>
+        <div class="subsection">
+          <h3 class="subsection-title">Accurate Mechanism Simulation</h3>
+          <div class="subcard-grid">
+            <!-- 4 placeholders -->
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
 
-    <!-- ──────────────────────── BibTeX ───────────────────────── -->
-    <section class="bibtex-section">
-      <h3>BibTeX</h3>
-      <pre class="bibtex-code">@article{gameverse,
+        <div class="subsection">
+          <h3 class="subsection-title">Infinite Game Simulation</h3>
+          <div class="subcard-grid">
+            <!-- 2 placeholders -->
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────────────── Game Generation ──────────────── -->
+      <section id="game-generation" class="section" data-fade>
+        <h2 class="section-title">Multi-Modal Game Generation</h2>
+        <p class="section-desc">
+          We introduce a hierarchical autoregressive caption method that injects
+          game-specific knowledge into open-domain video diffusion models
+          (VDM), transforming the VDM into a frame-wise, action-controllable,
+          real-time infinite game generator…
+        </p>
+        <img
+          src="images/game generation.png"
+          class="hero-img"
+          alt="Game generation framework diagram"
+        />
+
+        <!-- ──────────────── Sub-Sections ──────────────── -->
+        <div class="subsection">
+          <h3 class="subsection-title">Text&nbsp;to&nbsp;Game</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Text-Guided Game Scene Expansion</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Image&nbsp;to&nbsp;Game</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Multi-Model Guided Cross-Game Fusion</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ──────────────── Game Editing ──────────────── -->
+      <section
+        id="game-editing"
+        class="section section-alt"
+        data-fade
+      >
+        <h2 class="section-title">Multi-Granularity Game Editing</h2>
+        <p class="section-desc">
+          We propose a hybrid model that explicitly disentangles state
+          transition prediction and visual rendering, enabling coarse-to-fine
+          game content editing during play through diverse control signals.
+        </p>
+        <img
+          src="images/game editing.png"
+          class="hero-img"
+          alt="Game editing framework diagram"
+        />
+
+        <!-- ──────────────── Sub-Sections ──────────────── -->
+        <div class="subsection">
+          <h3 class="subsection-title">Coarse-Grained Game Scene Switching</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Coarse-Grained Game Scene Fusion</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Fine-Grained Game Scene Switching</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Fine-Grained Game Content Editing</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-title">Game Style Editing</h3>
+          <div class="subcard-grid">
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+            <div class="subcard"><div class="placeholder-video"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────────────── Contributors ────────────────────── -->
+      <section class="acknowledgements-section" data-fade>
+        <h3>Contributors</h3>
+        <p>Details coming soon…</p>
+      </section>
+
+      <!-- ──────────────────────── BibTeX ───────────────────────── -->
+      <section id="bibtex" class="bibtex-section" data-fade>
+        <h3>BibTeX</h3>
+        <pre class="bibtex-code">@article{gameverse,
   title   = {GameVerse: Interactive Video Game Generation},
   author  = {GameVerse Team},
-  journal = {arXiv preprint},
+  url     = {},
   year    = {2025}
-}</pre
-      >
-    </section>
+}</pre>
+      </section>
+    </main>
+
+    <!-- ──────────────────────── Footer ─────────────────────────── -->
+    <footer>
+      © 2025 GameVerse Team · Built with ❤️ by Cline
+    </footer>
+
+    <!-- Scripts -->
+    <script defer src="js/main.js"></script>
   </body>
 </html>

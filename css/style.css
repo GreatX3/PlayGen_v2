@@ -1,0 +1,379 @@
+/* ------------------------------------------------------------------
+   GameVerse – Global Stylesheet
+   Inspired by “The Matrix” reference site (neon / cyber aesthetic)
+------------------------------------------------------------------- */
+
+/* ------------ Fonts & Variables --------------------------------- */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: block;
+  src: url("../assets/fonts/roboto.woff2") format("woff2");
+}
+
+:root {
+  /* theme palette */
+  --bg-primary: #000;
+  --bg-secondary: #0a0a0a;
+  --bg-alt: #081018;
+  --clr-text: #ffffff;
+  --clr-muted: #9ba0a6;
+  --clr-accent: #08fdd8;
+  --clr-accent-soft: rgba(8, 253, 216, 0.15);
+  /* layout */
+  --max-width: 1500px;
+  --section-padding: 60px;
+  --radius-base: 8px;
+  /* typography */
+  --font-base: "Roboto", sans-serif;
+  --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
+  --fs-body: 1rem;
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-bold: 600;
+  /* transition */
+  --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration: 0.4s;
+}
+
+/* ------------ Resets -------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--clr-text);
+  font-family: var(--font-base);
+  line-height: 1.6;
+  font-weight: var(--fw-reg);
+}
+
+/* ------------ Typography ---------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-light);
+  margin: 0 0 0.4em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--clr-muted);
+  font-size: var(--fs-body);
+}
+
+/* ------------ Layout Helpers ------------------------------------ */
+.section {
+  padding: var(--section-padding) 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+.section-desc {
+  font-size: 1.125rem;
+  font-weight: var(--fw-light);
+  color: var(--clr-muted);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+
+/* ------------ Navigation ---------------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid #111;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  color: var(--clr-text);
+  font-weight: var(--fw-bold);
+  font-size: 1.25rem;
+  text-decoration: none;
+  gap: 8px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  color: var(--clr-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--duration) var(--easing);
+}
+
+header nav a:hover,
+header nav a.active {
+  color: var(--clr-accent);
+}
+
+/* ------------ Buttons ------------------------------------------- */
+.button {
+  position: relative;
+  background: transparent;
+  color: var(--clr-text);
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1px solid var(--clr-accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--duration) var(--easing),
+              box-shadow var(--duration) var(--easing),
+              transform var(--duration) var(--easing);
+}
+
+.button:hover {
+  background: var(--clr-accent-soft);
+  box-shadow: 0 0 8px var(--clr-accent), 0 0 24px var(--clr-accent-soft);
+  transform: translateY(-2px);
+}
+
+/* ------------ Hero / Intro -------------------------------------- */
+#intro {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+#intro h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+  margin-bottom: 0.2em;
+}
+
+#intro h2 {
+  font-weight: var(--fw-light);
+  color: var(--clr-muted);
+}
+
+#intro h2 strong {
+  color: var(--clr-text);
+}
+
+#intro .placeholder-wrap {
+  margin-top: 40px;
+}
+
+/* ------------ Hero Matrix Rain (optional) ----------------------- */
+#matrixRain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* ------------ Card Grid ----------------------------------------- */
+.subcard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.subcard {
+  background: var(--bg-secondary);
+  border: 1px solid #222;
+  border-radius: var(--radius-base);
+  padding: 15px;
+  transition: transform var(--duration) var(--easing),
+              box-shadow var(--duration) var(--easing);
+}
+
+.subcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.subcard video,
+.placeholder-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #111;
+  border: 1px dashed #333;
+  border-radius: 4px;
+}
+
+.placeholder-video {
+  position: relative;
+}
+
+.placeholder-video::after {
+  content: "Video coming soon";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-muted);
+  font-style: italic;
+}
+
+.subcard-caption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--clr-muted);
+}
+
+/* ------------ Subsection Layout ------------------------------- */
+.subsection {
+  margin-bottom: 4rem;
+}
+
+.subsection-title {
+  font-size: 1.375rem;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  color: var(--clr-text);
+  margin-bottom: 1rem;
+}
+
+/* ------------ Contributors & BibTeX --------------------------- */
+.acknowledgements-section,
+.bibtex-section {
+  padding: var(--section-padding) 5%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.acknowledgements-section {
+  background: var(--bg-secondary); /* match BibTeX style */
+  border-top: 1px solid #111;
+}
+
+.bibtex-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid #111;
+}
+
+.bibtex-code {
+  background: #111;
+  color: var(--clr-text);
+  padding: 20px;
+  border-radius: var(--radius-base);
+  display: inline-block;
+  text-align: left;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  max-width: 800px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------ Fade-in Animation -------------------------------- */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-fade] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration) var(--easing),
+              transform var(--duration) var(--easing);
+}
+
+[data-fade].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------ Utility ------------------------------------------ */
+.hero-img {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto 2.5rem;
+  border-radius: var(--radius-base);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* ------------ Footer ------------------------------------------- */
+footer {
+  padding: 40px 5%;
+  text-align: center;
+  background: var(--bg-secondary);
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid #111;
+}
+
+/* ------------ Responsive Tweaks -------------------------------- */
+@media (max-width: 640px) {
+  header nav ul {
+    gap: 12px;
+  }
+  .section {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
