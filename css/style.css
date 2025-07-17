@@ -107,10 +107,11 @@ p {
   font-size: 1.125rem;
   font-weight: var(--fw-light);
   color: var(--clr-muted);
-  text-align: center;
+  text-align: left;
   max-width: 900px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2.5rem auto;
   line-height: 1.75;
+  padding-left: 0;
 }
 
 /* ------------ Navigation ---------------------------------------- */
@@ -184,8 +185,15 @@ header nav a.active {
 
 /* ------------ Hero / Intro -------------------------------------- */
 #intro {
-  padding: 120px 0 80px;
+  position: relative;
+  height: 100vh;
+  padding-top: 120px; /* header offset */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 #intro h1 {
@@ -218,15 +226,16 @@ header nav a.active {
 /* ------------ Card Grid ----------------------------------------- */
 .subcard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  /* 强制每行最多3个，超出自动换行 */
 }
 
 .subcard {
   background: var(--bg-secondary);
   border: 1px solid #222;
   border-radius: var(--radius-base);
-  padding: 15px;
+  padding: 6px;
   transition: transform var(--duration) var(--easing),
               box-shadow var(--duration) var(--easing);
 }
@@ -241,7 +250,7 @@ header nav a.active {
   width: 100%;
   aspect-ratio: 16/9;
   background: #111;
-  border: 1px dashed #333;
+  border: none;
   border-radius: 4px;
 }
 
@@ -340,11 +349,17 @@ header nav a.active {
 /* ------------ Utility ------------------------------------------ */
 .hero-img {
   width: 100%;
-  max-width: 1000px;
+  max-width: 650px;
   display: block;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
   border-radius: var(--radius-base);
 }
+
+/* 可为每个图片单独设置宽度：.hero-img--overview, .hero-img--simulation, .hero-img--generation, .hero-img--editing */
+.hero-img--overview   { max-width: 900px !important; }
+.hero-img--simulation { max-width: 700px !important; }
+.hero-img--generation { max-width: 700px !important; }
+.hero-img--editing    { max-width: 800px !important; }
 
 .text-center {
   text-align: center;
@@ -355,6 +370,94 @@ header nav a.active {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+
+/* ---------- Logo Title (Yan) ----------------------------------- */
+.logo-title {
+  display: inline-flex;
+  gap: 0;
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.logo-title span {
+  display: inline-block;
+  position: relative;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.logo-title .y,
+.logo-title .n {
+  background-image: repeating-linear-gradient(
+    180deg,
+    #9ee8ff 0%,
+    #6dddff 20%,
+    #9ee7ff 40%,
+    #7ad9fc 60%,
+    #9ed8ff 80%
+  );
+}
+
+.logo-title .a {
+  background-image: linear-gradient(180deg, #ff9652 0%, #ff7447 25%, #2fcefa 100%);
+}
+/* ---------- Demo Video ---------------------------------------- */
+.demo-video {
+  border: 2px solid var(--clr-accent);
+  border-radius: var(--radius-base);
+  box-shadow: 0 0 10px var(--clr-accent-soft), 0 0 25px rgba(0, 255, 210, 0.05);
+  cursor: pointer;
+  transition: box-shadow var(--duration) var(--easing), transform var(--duration) var(--easing);
+}
+.demo-video:hover {
+  box-shadow: 0 0 12px var(--clr-accent), 0 0 32px rgba(0, 255, 210, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ---------- Intro Background Video ------------------------------ */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+/* ---------- Intro Content Container ----------------------------- */
+.intro-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* ---------- Scroll-down Icon ------------------------------------ */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: var(--clr-accent);
+  text-decoration: none;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -6px); }
 }
 
 /* ------------ Footer ------------------------------------------- */

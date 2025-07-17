@@ -1,4 +1,42 @@
 /* ------------------------------------------------------------
+/**
+ * Hover-to-show-controls for all videos
+ * 鼠标悬停显示控件，移开隐藏（未播放时）
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  // 选中所有页面内 video 元素，排除首页背景视频（class="bg-video"）
+  const allVideos = Array.from(document.querySelectorAll("video:not(.bg-video)"));
+  allVideos.forEach(video => {
+    // 初始隐藏controls
+    video.controls = false;
+    // 悬停显示controls
+    video.addEventListener("mouseenter", () => {
+      video.controls = true;
+    });
+    // 离开隐藏controls（如果没在播放）
+    video.addEventListener("mouseleave", () => {
+      if (video.paused) video.controls = false;
+    });
+    // 点击播放/暂停
+    video.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+    // 播放时保持controls
+    video.addEventListener("play", () => {
+      video.controls = true;
+    });
+    // 暂停时如果鼠标不在上面则隐藏controls
+    video.addEventListener("pause", () => {
+      if (!video.matches(":hover")) video.controls = false;
+    });
+  });
+});
+
+/* ------------------------------------------------------------
    GameVerse – main.js
    • Fade-in animation via IntersectionObserver
    • Active-link highlighting in nav
