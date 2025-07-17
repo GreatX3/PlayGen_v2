@@ -120,3 +120,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial state
   toggleBackBtn();
 })();
+
+/**
+ * 视频懒加载：teaser.mp4首页视频优先加载，其他视频滚动到视口时再加载
+ */
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
+          obs.unobserve(video);
+        }
+      });
+    }, { rootMargin: "200px" });
+    lazyVideos.forEach(video => observer.observe(video));
+  } else {
+    // Fallback: 直接加载所有
+    lazyVideos.forEach(video => {
+      if (!video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+        video.load();
+      }
+    });
+  }
+});
