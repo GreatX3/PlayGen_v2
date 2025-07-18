@@ -73,37 +73,47 @@
 
     <!-- ──────────────────────── Overview ──────────────────────── -->
     <section id="overview" class="section" data-fade>
-      <!-- <video
-          class="demo-video"
-          src="videos_compressed/overview.mp4"
-          controls
-          playsinline
-          style="width: 60%; max-width: 1000px; border-radius: 8px; margin-bottom: 2rem"
-        ></video> -->
-      <h2 class="section-title">Project Overview</h2>
+      <h2 class="section-title">Overview</h2>
       <p class="section-desc">
-        We present Yan, a foundational framework for interactive video
-        generation, spanning the entire pipeline from AAA-level interactive
-        simulation, multi-modal generation to multi-granularity editing.
-        Games<sup><a href="https://en.wikipedia.org/wiki/Yuan_Meng_Star" target="_blank" rel="noopener noreferrer"
-            style="color:#7fa7c7;text-decoration:none;">1</a></sup> can be regarded as real-time endlessly unfolding interactive
-        videos_compressed,
-        making them as high-quality testbed.
+        We propose Yan, a foundational framework for interactive video generation, which comprises three
+        core modules: Yan-Sim, Yan-Gen, and Yan-Edit. Specifically, Yan-Sim is responsible for high-quality simulation
+        of interactive video environments; Yan-Gen uses text and images as prompt to generate interactive video
+        with strong generalizability; Yan-Edit supports multi-granularity, real-time
+        editing of interactive video content. We choose games<sup><a href="https://en.wikipedia.org/wiki/Yuan_Meng_Star"
+            target="_blank" rel="noopener noreferrer" style="color:#7fa7c7;text-decoration:none;">1</a></sup> as
+        testbed, regarding them as an infinite
+        interactive video generation scenario that demands both high real-time performance and superior visual quality,
+        to validate the
+        performance of our framework.
       </p>
-
+      <video class="demo-video" src="videos_compressed/overview1.mp4" autoplay muted loop playsinline
+        style="width: 60%; max-width: 1000px; border-radius: 8px; margin-bottom: 2rem; display: block; margin-left: auto; margin-right: auto;"></video>
       <!-- Overview diagram -->
-      <img src="images/overview.png" class="hero-img hero-img--overview" alt="Overview framework diagram" />
+      <!-- <img src="images/overview.png" class="hero-img hero-img--overview" alt="Overview framework diagram" /> -->
     </section>
 
     <!-- ──────────────── Game Simulation ──────────────── -->
     <section id="simulation" class="section section-alt" data-fade>
       <h2 class="section-title">AAA-level Simulation</h2>
       <p class="section-desc">
-        We design a highly-compressed, low-latency 3D-VAE coupled with a
+        <!-- We design a highly-compressed, low-latency 3D-VAE coupled with a
         rolling KV-cache latent diffusion model, achieving <strong
           style="color: var(--clr-accent);">1080p/60&nbsp;fps</strong>
         interactive simulation in mainstream 3D environments with robust mechanism
-        preservation.
+        preservation. -->
+        Yan-Sim achieves high-fidelity simulation of interactive game videos, guaranteeing ​​both​​ <strong
+          style="color: var(--clr-accent);">1080p</strong> resolution and
+        real-time <strong style="color: var(--clr-accent);">60fps</strong> performance. ​​To enable frame-by-frame
+        interactivity, we adapt a diffusion model into a causal
+        architecture​​ trained using the diffusion forcing paradigm. This ​​approach conditions​​ each frame on
+        previously generated frames ​​and​​ per-frame control signals. ​​For simultaneous high-resolution​​ ​​a​​nd
+        real-time operation, ​​we implement three key optimizations:​​ (1) A ​​higher-compression VAE​​ with a
+        spatiotemporal downsampling of 32 × 32 × 2, ​​reduces the size of the latent representation​​; (2) DDIM sampling
+        ​​reduces the inference steps to 4​​, ​​enhanced by a shift-window denoising​​ inference technique ​​that
+        processes​​ frames with varying noise levels concurrently​​, ensuring clean samples at every denoising step​​;
+        and (3) ​​Model pruning combined with quantization​​ ​​significantly accelerates​​ inference speed​​,
+        collectively enabling​​ the target performance.
+
       </p>
       <img src="images/architecture/yan_sim.png" class="hero-img hero-img--simulation"
         alt="Game simulation framework diagram" />
@@ -113,13 +123,16 @@
         <h3 class="subsection-title">Diverse Scenarios Simulation</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/scene_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/scene_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/scene_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/scene_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/scene_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/scene_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -129,13 +142,16 @@
         <h3 class="subsection-title">Accurate Mechanism Simulation</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/mechanism_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/mechanism_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/mechanism_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/mechanism_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/mechanism_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/mechanism_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -145,13 +161,16 @@
         <h3 class="subsection-title">Infinite-length Simulation</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/infinite_0.mp4" muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/infinite_0.mp4" muted loop playsinline
+              preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/infinite_1.mp4" muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/infinite_1.mp4" muted loop playsinline
+              preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/simulation/infinite_2.mp4" muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/simulation/infinite_2.mp4" muted loop playsinline
+              preload="none"></video>
           </div>
         </div>
       </div>
@@ -161,10 +180,17 @@
     <section id="generation" class="section" data-fade>
       <h2 class="section-title">Multi-Modal Generation</h2>
       <p class="section-desc">
-        We introduce a hierarchical autoregressive caption method that injects
-        domain-specific knowledge from games into open-domain video diffusion
-        models (VDMs), then transforming the VDM into a frame-wise,
-        action-controllable, real-time interactive video generator…
+        Yan-Gen enables versatile generation of diverse interactive video content from multimodal inputs, specializing
+        in adaptive
+        synthesis across varied scenarios. The model integrates text, visual, and
+        action-based controls to dynamically adapt generated content to specific contexts, supporting everything
+        from close-domain games to open-world senarios.
+        Architecturally, Yan-Gen employs a a multimodal diffusion transformer (DiT) backbone, processing input
+        tokens—such as text prompts, reference visuals, and action sequences—through specialized encoders (e.g.,
+        umt5-xxl for textual understanding, ViT-H-14 for visual feature extraction). Task-specific constraints are
+        injected through cross-attention layers, allowing precise guidance of the interactive mechanics, visual styles,
+        and
+        narrative elements.
       </p>
       <img src="images/architecture/yan_gen.png" class="hero-img hero-img--generation"
         alt="Game generation framework diagram" />
@@ -176,13 +202,16 @@
         </h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/text_to_game_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/text_to_game_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/text_to_game_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/text_to_game_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/text_to_game_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/text_to_game_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -191,16 +220,19 @@
       <!-- ────────── Expansion ────────── -->
 
       <div class="subsection">
-        <h3 class="subsection-title">Text-Guided Video Expansion</h3>
+        <h3 class="subsection-title">Text-Guided Interactive Video Expansion</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/expansion_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/expansion_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/expansion_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/expansion_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/expansion_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/expansion_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -211,22 +243,28 @@
           Image&nbsp;to&nbsp;Interactive Video
           <div class="subcard-grid">
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_0.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_0.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_6.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_6.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_1.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_1.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_4.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_4.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_2.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_2.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
             <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/image_to_game_5.mp4" autoplay muted loop playsinline preload="none"></video>
+              <video class="lazy-video" data-src="videos_compressed/generation/image_to_game_5.mp4" autoplay muted loop
+                playsinline preload="none"></video>
             </div>
           </div>
       </div>
@@ -235,13 +273,16 @@
         <h3 class="subsection-title">Multi-Modal Cross-Domain Fusion</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/fusion_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/fusion_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/fusion_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/fusion_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/generation/fusion_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/generation/fusion_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -251,18 +292,17 @@
     <section id="editing" class="section section-alt" data-fade>
       <h2 class="section-title">Multi-Granularity Editing</h2>
       <p class="section-desc">
-        Video editing is an important application of video generation. In interactive video generation, it is possible
-        to edit not only the video content (e.g., changing an object's color and texture) like video editing, but also
-        the interactive mechanics (e.g., adding an interactable object). Learning both editing in a single model has
-        high complexity. A better way is to decouple the two types of editing and learn them separately. Hence, we
-        propose a hybird model consisting of an interactive mechanics simulator and a visual renderer to learn
-        interactive mechanics editing and video content editing, respectively. The interactive mechanics simulator is
-        built on Yan-Sim, levearging its strong simulation of complex interaction mechanics. And the visual renderer
-        takes advantage of Yan-Gen for its powerful generation capabilities on various open-domain video content. We use
-        the depth map as intermediate state to connect these two mudules. To facilitate convenient and controllable
-        editing, we employ two types of text prompts: structure prompt for interactive mechanics editing (also called
-        structure editing) and style prompt for visual content editing (also called style editing). With this hybird
-        model, it is able to achieve multi-granularity editing through text during interaction.
+        Yan-Edit enables multi-granularity video content editing via text-based interaction, encompassing both
+        structural editing (e.g., adding interactive objects) and style editing (e.g., altering an object's color and
+        texture). To achieve flexible and controllable editing, we propose a hybird model consisting of an interactive
+        mechanics simulator and a visual renderer to learn structure editing and style editing, respectively. We use the
+        depth map as intermediate state to connect these two mudules. The interactive mechanics simulator is built upon
+        Yan-Sim, levearging its high-fidelity simulation of interactive videos. And we integrate structure text prompts
+        into Yan-Sim via text cross attention layers to achieve structure editing. The visual renderer takes advantage
+        of Yan-Gen for its powerful generation capabilities on various open-domain visual content. It employs a
+        controlnet to inject the depth map generated by the interactive mechanics simulator into Yan-Gen, and then uses
+        style text prompts to enable versatile style editing.
+
       </p>
       <img src="images/architecture/yan_edit.png" class="hero-img hero-img--editing" alt="editing framework diagram" />
 
@@ -273,13 +313,16 @@
         <h3 class="subsection-title">Structure Editing</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/structure_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/structure_0.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/structure_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/structure_1.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/structure_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/structure_2.mp4" autoplay muted loop
+              playsinline preload="none"></video>
           </div>
         </div>
       </div>
@@ -289,13 +332,16 @@
         <h3 class="subsection-title">Style Editing</h3>
         <div class="subcard-grid">
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/style_0.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/style_0.mp4" autoplay muted loop playsinline
+              preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/style_1.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/style_1.mp4" autoplay muted loop playsinline
+              preload="none"></video>
           </div>
           <div class="subcard">
-<video class="lazy-video" data-src="videos_compressed/editing/style_2.mp4" autoplay muted loop playsinline preload="none"></video>
+            <video class="lazy-video" data-src="videos_compressed/editing/style_2.mp4" autoplay muted loop playsinline
+              preload="none"></video>
           </div>
         </div>
       </div>

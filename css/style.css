@@ -111,7 +111,7 @@ p {
   max-width: 900px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.75;
-  padding-left: 0;
+  padding-left: 1.5em;
 }
 
 /* ------------ Navigation ---------------------------------------- */
@@ -407,9 +407,9 @@ header nav a.active {
 }
 /* ---------- Demo Video ---------------------------------------- */
 .demo-video {
-  border: 2px solid var(--clr-accent);
+  border: none !important;
   border-radius: var(--radius-base);
-  box-shadow: 0 0 10px var(--clr-accent-soft), 0 0 25px rgba(0, 255, 210, 0.05);
+  box-shadow: none !important;
   cursor: pointer;
   transition: box-shadow var(--duration) var(--easing), transform var(--duration) var(--easing);
 }
